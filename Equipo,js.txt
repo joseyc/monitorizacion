@@ -1,0 +1,20 @@
+var fs=require('fs'); //cargar un modulo, unidad independiente de codigo  en este caso fs, devuelve una funcion 
+var js = fs.readFileSync('jugador.js') + '';
+eval(js);
+
+
+var Equipo = function(nombre,anyoFundacion) {
+       this.nombre=nombre;
+	   this.anyoFundacion=anyoFundacion;
+	   this.jugadores=[];
+};
+
+
+
+var fcBarcelona = new Equipo('FC barcelona',1899);
+
+var j1 = new Jugador('Messi','Delantero',10);      // crea  la burbuja	
+var j2 = new Jugador('Pique','Defensa',3);
+
+j1.equipo = fcBarcelona;
+console.log(j1.equipo.nombre);
